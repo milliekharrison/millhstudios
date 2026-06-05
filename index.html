@@ -234,7 +234,7 @@ section {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(220px, 380px) 1fr;
+  grid-template-columns: minmax(280px, 540px) 1fr;
   gap: clamp(2.5rem, 6vw, 6rem);
   align-items: start;
 }
@@ -288,7 +288,7 @@ section {
 
 @media (max-width: 800px) {
   .about-grid { grid-template-columns: 1fr; }
-  .about-photo { max-width: 420px; aspect-ratio: 4/3; }
+  .about-photo { max-width: 540px; aspect-ratio: 4/3; }
 }
 
 /* ---------- props ---------- */
@@ -458,11 +458,34 @@ section {
   margin: 0 auto;
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
-.painting-group + .painting-group {
+.painting-group + .painting-group,
+.painting-group + .painting-row,
+.painting-row + .painting-group,
+.painting-row + .painting-row {
   padding-top: clamp(3rem, 6vw, 5rem);
   border-top: 1px solid var(--line);
 }
-.painting-group:last-child { padding-bottom: 0; }
+.painting-group:last-child,
+.painting-row:last-child { padding-bottom: 0; }
+
+.painting-row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+.painting-row .painting-group {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-top: 0;
+}
+.painting-row .group-grid { grid-template-columns: 1fr; }
+@media (max-width: 800px) {
+  .painting-row { grid-template-columns: 1fr; gap: clamp(2.5rem, 6vw, 4rem); }
+}
 .group-head {
   margin-bottom: 2.25rem;
   max-width: 60ch;
@@ -704,7 +727,7 @@ body::before {
     <div class="about-text reveal">
       <p class="eyebrow">About</p>
       <h2>Millie Harrison</h2>
-      <p>I'm a maker and painter based in Edinburgh, building a practice around prop work for film, theatre, and commercial productions. My background is in tech consultancy, which trained me to work to a brief, hit a deadline, and pay close attention to detail. I bring the same standards to fabrication.</p>
+      <p>I'm a maker and painter based in Edinburgh, building a practice around prop work for film, theatre, and commercial productions. Years of working to tight briefs and deadlines in another industry shaped how I approach a build: planned out, carefully executed, and finished to spec.</p>
       <p>My current work spans hand-formed brass, foam sculpting and finishing, screen-ready paint and weathering, and hand-woven chainmaille. I'm comfortable working from reference, taking direction, and problem-solving on the bench. Available for assistant roles, freelance builds, and collaborations at any scale.</p>
       <div class="about-contact">
         <div>
@@ -799,6 +822,17 @@ body::before {
 
   <div class="painting-group reveal">
     <div class="group-head">
+      <h3>Alligator Sign · UV Paint</h3>
+      <p>A hand-painted danger sign finished in UV-reactive paint. Reads as a flat graphic under standard lighting and shifts to a fully luminous piece under blacklight. A useful study in dual-state surface design for staged or themed environments.</p>
+    </div>
+    <div class="group-grid" data-gallery="painting-alligator">
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_8071.jpg" alt="Alligator danger sign finished view" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7897.jpg" alt="Alligator sign glowing under UV light" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="painting-group reveal">
+    <div class="group-head">
       <p class="group-meta">Sep to Dec 2025</p>
       <h3>Edinburgh University Art Course</h3>
       <p>A focused course at the University of Edinburgh covering still life, figure, and mixed media. Time spent here was about refining fundamentals: observational drawing, colour mixing, layered composition, and translating reference into a finished surface.</p>
@@ -817,34 +851,24 @@ body::before {
     </div>
   </div>
 
-  <div class="painting-group reveal">
-    <div class="group-head">
-      <h3>Alligator Sign · UV Paint</h3>
-      <p>A hand-painted danger sign finished in UV-reactive paint. Reads as a flat graphic under standard lighting and shifts to a fully luminous piece under blacklight. A useful study in dual-state surface design for staged or themed environments.</p>
+  <div class="painting-row reveal">
+    <div class="painting-group">
+      <div class="group-head">
+        <h3>Spray Paint Art</h3>
+        <p>A planetary scene built up in layered spray paint with masking and resist techniques, working with the medium's natural gradients and textures rather than against them.</p>
+      </div>
+      <div class="group-grid" data-gallery="painting-spray">
+        <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_6097.jpg" alt="Spray paint galaxy with planets" loading="lazy"></div>
+      </div>
     </div>
-    <div class="group-grid" data-gallery="painting-alligator">
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_8071.jpg" alt="Alligator danger sign finished view" loading="lazy"></div>
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7897.jpg" alt="Alligator sign glowing under UV light" loading="lazy"></div>
-    </div>
-  </div>
-
-  <div class="painting-group reveal">
-    <div class="group-head">
-      <h3>Spray Paint Art</h3>
-      <p>A planetary scene built up in layered spray paint with masking and resist techniques, working with the medium's natural gradients and textures rather than against them.</p>
-    </div>
-    <div class="group-grid" data-gallery="painting-spray">
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_6097.jpg" alt="Spray paint galaxy with planets" loading="lazy"></div>
-    </div>
-  </div>
-
-  <div class="painting-group reveal">
-    <div class="group-head">
-      <h3>Toyota Carina · Acrylic</h3>
-      <p>A study of a 1974 Toyota Carina in acrylic. Focus on automotive surface, reflection, and the colour relationships in a single subject under flat light.</p>
-    </div>
-    <div class="group-grid" data-gallery="painting-car">
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_5386.jpg" alt="1974 Toyota Carina in acrylic" loading="lazy"></div>
+    <div class="painting-group">
+      <div class="group-head">
+        <h3>Toyota Carina · Acrylic</h3>
+        <p>A study of a 1974 Toyota Carina in acrylic. Focus on automotive surface, reflection, and the colour relationships in a single subject under flat light.</p>
+      </div>
+      <div class="group-grid" data-gallery="painting-car">
+        <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_5386.jpg" alt="1974 Toyota Carina in acrylic" loading="lazy"></div>
+      </div>
     </div>
   </div>
 </section>

@@ -240,14 +240,13 @@ section {
 }
 .about-photo {
   position: relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   overflow: hidden;
   background: var(--bg-elevated);
 }
 .about-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 25% center;
   filter: saturate(.85) contrast(1.02);
   transition: transform 1.2s ease;
 }
@@ -289,7 +288,7 @@ section {
 
 @media (max-width: 800px) {
   .about-grid { grid-template-columns: 1fr; }
-  .about-photo { max-width: 320px; aspect-ratio: 4/5; }
+  .about-photo { max-width: 420px; aspect-ratio: 4/3; }
 }
 
 /* ---------- props ---------- */
@@ -687,7 +686,7 @@ body::before {
   <div class="hero-inner">
     <h1 class="reveal">millhstudios</h1>
     <p class="subtitle reveal">Prop Making · Fabrication · Art</p>
-    <p class="intro reveal">Edinburgh-based. Moving into prop work for film and theatre.</p>
+    <p class="intro reveal">Edinburgh-based prop maker and painter. Working in metal, foam, paint, and chainmaille for film, theatre, and commercial productions.</p>
     <nav class="hero-nav reveal" aria-label="Section shortcuts">
       <a href="#about">About</a>
       <a href="#props">Prop Making</a>
@@ -705,8 +704,8 @@ body::before {
     <div class="about-text reveal">
       <p class="eyebrow">About</p>
       <h2>Millie Harrison</h2>
-      <p>I'm a maker and painter based in Edinburgh. The last few years I've worked on the tech side of a consultancy, and recently I've been spending more time on what I actually want to do, which is making things with my hands.</p>
-      <p>I'm building toward prop making and prop design for film and theatre. My work covers brass and metalwork, foam, painting, and chainmaille. I'm looking for ways in: assistant roles, volunteer work, anything where I can learn on a real production.</p>
+      <p>I'm a maker and painter based in Edinburgh, building a practice around prop work for film, theatre, and commercial productions. My background is in tech consultancy, which trained me to work to a brief, hit a deadline, and pay close attention to detail. I bring the same standards to fabrication.</p>
+      <p>My current work spans hand-formed brass, foam sculpting and finishing, screen-ready paint and weathering, and hand-woven chainmaille. I'm comfortable working from reference, taking direction, and problem-solving on the bench. Available for assistant roles, freelance builds, and collaborations at any scale.</p>
       <div class="about-contact">
         <div>
           <span class="label">Email</span>
@@ -729,14 +728,14 @@ body::before {
   <div class="section-head reveal">
     <p class="eyebrow">Section One · Prop Making</p>
     <h2>Builds</h2>
-    <p class="lead">These are my first builds, made on my own as I figure out the craft. Each one was a chance to focus on something specific: shaping metal, sculpting foam, replicating a piece from reference.</p>
+    <p class="lead">A working portfolio of independent builds. Each project targets a different technique: metal forming and finishing, foam sculpting and dressing, paint treatments for screen, and replica work from reference.</p>
   </div>
 
   <article class="project reveal">
     <div class="project-text">
       <span class="num">01 / Brass Butterfly</span>
       <h3>Brass Butterfly</h3>
-      <p>Inspired by Jinx's butterfly from Arcane. Hand-formed from brass sheet, working from screen references to get the proportions and finish right. Still a work in progress.</p>
+      <p>A screen replica of Jinx's butterfly from Arcane. Hand-formed from brass sheet, with proportions and surface finish dialled in from frame references. Work in progress, currently focused on wing structure and patina.</p>
       <p class="tags">Metalwork · Brass · Screen Replica · Work in Progress</p>
     </div>
     <div class="project-media layout-grid4" data-gallery="butterfly">
@@ -751,7 +750,7 @@ body::before {
     <div class="project-text">
       <span class="num">02 / Sidearm</span>
       <h3>Painted Sci-Fi Sidearm</h3>
-      <p>A painted and weathered sci-fi pistol. Layered base coats, dry-brushing on the edges, and silver paint scraped through, so it reads as something actually used rather than a clean toy.</p>
+      <p>A sci-fi sidearm finished as a screen-ready prop. Layered base coats, dry-brushed edge highlights, and selective silver scrape-through to read as a worn, in-world object on camera rather than an off-the-shelf toy.</p>
       <p class="tags">Paint Finish · Weathering · Prop Treatment</p>
     </div>
     <div class="project-media layout-duo" data-gallery="pistol">
@@ -764,7 +763,7 @@ body::before {
     <div class="project-text">
       <span class="num">03 / Bar Sign</span>
       <h3>Bar Sign</h3>
-      <p>A hand-built bar sign made from MDF and foam. Practice in signage fabrication, layering, and the kind of finishing work that comes up in set dressing.</p>
+      <p>A bar sign built from MDF and foam, treated for set dressing use. Focused on dimensional signage construction, layered build-up, and the kind of paint and aging work that lets a piece sit naturally on a set.</p>
       <p class="tags">Foam · MDF · Set Dressing</p>
     </div>
     <div class="project-media">
@@ -779,7 +778,7 @@ body::before {
     <div class="project-text">
       <span class="num">04 / Rocky</span>
       <h3>Rocky · Project Hail Mary</h3>
-      <p>A foam build of Rocky, the alien from Andy Weir's Project Hail Mary. Focused on organic sculpting, the armature underneath, and getting the texture to look believable.</p>
+      <p>A foam replica of Rocky, the alien from Andy Weir's Project Hail Mary. An exercise in organic creature sculpting: armature construction, foam carving and shaping, and surface texture work to land a believable non-human form.</p>
       <p class="tags">Foam Fabrication · Sculpting · Replica</p>
     </div>
     <div class="project-media">
@@ -795,14 +794,14 @@ body::before {
   <div class="section-head reveal">
     <p class="eyebrow">Section Two · Painting</p>
     <h2>Painting</h2>
-    <p class="lead">Paintings from the last few years. Where most of my colour, texture, and surface work comes from. Oils, acrylics, mixed media, and spray paint.</p>
+    <p class="lead">Paintings and surface studies that underpin my colour, texture, and finishing work. Oils, acrylics, spray paint, UV-reactive paint, and mixed media across studio courses and self-directed projects.</p>
   </div>
 
   <div class="painting-group reveal">
     <div class="group-head">
       <p class="group-meta">Sep to Dec 2025</p>
       <h3>Edinburgh University Art Course</h3>
-      <p>A short course at Edinburgh University across autumn 2025. Mostly still life and mixed media, with a lot of time spent honing painting technique.</p>
+      <p>A focused course at the University of Edinburgh covering still life, figure, and mixed media. Time spent here was about refining fundamentals: observational drawing, colour mixing, layered composition, and translating reference into a finished surface.</p>
     </div>
     <div class="group-grid" data-gallery="painting-edinburgh">
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0888.jpg" alt="Monstera leaf print studies" loading="lazy"></div>
@@ -812,16 +811,18 @@ body::before {
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1376.jpg" alt="Colour wheel studies" loading="lazy"></div>
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1381.jpg" alt="Still life setup in natural light" loading="lazy"></div>
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1386.jpg" alt="Cubist still life study" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_3083.jpg" alt="Atmospheric dark painting study" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_2256.jpg" alt="Figure study in blue" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0943.jpg" alt="Monstera leaf print study in orange" loading="lazy"></div>
     </div>
   </div>
 
   <div class="painting-group reveal">
     <div class="group-head">
       <h3>Alligator Sign · UV Paint</h3>
-      <p>An alligator danger sign painted with UV-reactive paint so the whole thing lights up under blacklight.</p>
+      <p>A hand-painted danger sign finished in UV-reactive paint. Reads as a flat graphic under standard lighting and shifts to a fully luminous piece under blacklight. A useful study in dual-state surface design for staged or themed environments.</p>
     </div>
     <div class="group-grid" data-gallery="painting-alligator">
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7917.jpg" alt="Alligator danger sign painted poster" loading="lazy"></div>
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_8071.jpg" alt="Alligator danger sign finished view" loading="lazy"></div>
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7897.jpg" alt="Alligator sign glowing under UV light" loading="lazy"></div>
     </div>
@@ -830,7 +831,7 @@ body::before {
   <div class="painting-group reveal">
     <div class="group-head">
       <h3>Spray Paint Art</h3>
-      <p>Planets and a galaxy worked up in layers of spray paint and masking, leaning on the textures the medium gives you.</p>
+      <p>A planetary scene built up in layered spray paint with masking and resist techniques, working with the medium's natural gradients and textures rather than against them.</p>
     </div>
     <div class="group-grid" data-gallery="painting-spray">
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_6097.jpg" alt="Spray paint galaxy with planets" loading="lazy"></div>
@@ -840,21 +841,10 @@ body::before {
   <div class="painting-group reveal">
     <div class="group-head">
       <h3>Toyota Carina · Acrylic</h3>
-      <p>A 1974 Toyota Carina painted in acrylic.</p>
+      <p>A study of a 1974 Toyota Carina in acrylic. Focus on automotive surface, reflection, and the colour relationships in a single subject under flat light.</p>
     </div>
     <div class="group-grid" data-gallery="painting-car">
       <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_5386.jpg" alt="1974 Toyota Carina in acrylic" loading="lazy"></div>
-    </div>
-  </div>
-
-  <div class="painting-group reveal">
-    <div class="group-head">
-      <h3>Other Works</h3>
-    </div>
-    <div class="group-grid" data-gallery="painting-other">
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_3083.jpg" alt="Atmospheric dark painting" loading="lazy"></div>
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_2256.jpg" alt="Figure study in blue" loading="lazy"></div>
-      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0943.jpg" alt="Monstera leaf print study in orange" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -863,7 +853,7 @@ body::before {
   <div class="section-head reveal">
     <p class="eyebrow">Section Three · Chainmaille &amp; Jewellery</p>
     <h2>Chainmaille</h2>
-    <p class="lead">Hand-woven chainmaille and a bit of metalwork jewellery. Slow, repetitive work, all built up ring by ring using traditional weaving techniques.</p>
+    <p class="lead">Hand-woven chainmaille garments, accessories, and jewellery. Each piece is built ring by ring using traditional weaves, with attention to drape, density, and finish for both wear and screen.</p>
   </div>
   <div class="masonry reveal" data-gallery="chainmail">
     <div class="mitem"><img width="1600" height="1200" src="images/chainmaille/IMG_9371.jpg" alt="Chainmaille bralette" loading="lazy"></div>
@@ -873,7 +863,6 @@ body::before {
     <div class="mitem"><img width="1200" height="1600" src="images/chainmaille/IMG_9004.jpg" alt="Three chainmaille panels in progress" loading="lazy"></div>
     <div class="mitem"><img width="1200" height="1600" src="images/chainmaille/IMG_0187.jpg" alt="Chainmaille lighter sleeve keychain" loading="lazy"></div>
     <div class="mitem"><img width="1200" height="1600" src="images/chainmaille/IMG_0188.jpg" alt="Chainmaille lighter sleeve detail" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/chainmaille/IMG_0189.jpg" alt="Chainmaille lighter sleeve finished" loading="lazy"></div>
   </div>
 </section>
 
@@ -888,7 +877,7 @@ body::before {
         <a href="mailto:milliekharrison@gmail.com">milliekharrison@gmail.com</a>
         <a href="https://www.instagram.com/millhstudios" target="_blank" rel="noopener">@millhstudios</a>
       </div>
-      <p><em>Open to prop making assistant roles, volunteer set work, and collaborative projects.</em></p>
+      <p><em>Available for prop making assistant roles, freelance builds, and on-set collaborations across film, theatre, and commercial productions.</em></p>
     </div>
   </div>
   <div class="footer-note">

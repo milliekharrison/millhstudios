@@ -247,6 +247,7 @@ section {
 .about-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: 25% center;
   filter: saturate(.85) contrast(1.02);
   transition: transform 1.2s ease;
 }
@@ -452,6 +453,77 @@ section {
 @media (max-width: 900px) { .masonry { column-count: 2; } }
 @media (max-width: 560px) { .masonry { column-count: 1; } }
 
+/* painting groups */
+.painting-group {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+.painting-group + .painting-group {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+.painting-group:last-child { padding-bottom: 0; }
+.group-head {
+  margin-bottom: 2.25rem;
+  max-width: 60ch;
+}
+.group-head .group-meta {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 .75rem;
+  font-weight: 500;
+}
+.group-head h3 {
+  color: var(--cream);
+  margin: 0 0 .65rem;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 500;
+}
+.group-head p {
+  color: var(--cream-mid);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 60ch;
+}
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.group-grid .mitem {
+  overflow: hidden;
+  background: var(--bg-elevated);
+  position: relative;
+  aspect-ratio: 4/5;
+}
+.group-grid .mitem img {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover;
+  cursor: zoom-in;
+  filter: saturate(.9) contrast(1.02);
+  transition: transform .7s ease, filter .4s ease;
+}
+.group-grid .mitem:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.05) contrast(1.05);
+}
+.group-grid .mitem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(243,238,228,0);
+  transition: border-color .3s ease;
+  pointer-events: none;
+}
+.group-grid .mitem:hover::after { border-color: rgba(184,160,110,.25); }
+@media (max-width: 900px) { .group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .group-grid { grid-template-columns: 1fr; } }
+
 /* ---------- footer ---------- */
 footer {
   background: var(--bg-deep);
@@ -615,7 +687,7 @@ body::before {
   <div class="hero-inner">
     <h1 class="reveal">millhstudios</h1>
     <p class="subtitle reveal">Prop Making · Fabrication · Art</p>
-    <p class="intro reveal">Edinburgh-based maker transitioning into film and theatre prop design.</p>
+    <p class="intro reveal">Edinburgh-based. Moving into prop work for film and theatre.</p>
     <nav class="hero-nav reveal" aria-label="Section shortcuts">
       <a href="#about">About</a>
       <a href="#props">Prop Making</a>
@@ -633,8 +705,8 @@ body::before {
     <div class="about-text reveal">
       <p class="eyebrow">About</p>
       <h2>Millie Harrison</h2>
-      <p>I'm Millie Harrison — a maker, painter, and creative problem-solver based in Edinburgh. After several years working in the tech side of a consultancy, I've been pursuing what I actually love: building things with my hands.</p>
-      <p>I'm transitioning into prop making and prop design for film and theatre, combining a lifelong passion for making with skills in materials, metalwork, and detail-oriented fabrication. My work spans hand-formed metalwork, foam fabrication, painting, and chainmaille — and I'm actively looking for opportunities to assist, collaborate, or learn on productions of any scale.</p>
+      <p>I'm a maker and painter based in Edinburgh. The last few years I've worked on the tech side of a consultancy, and recently I've been spending more time on what I actually want to do, which is making things with my hands.</p>
+      <p>I'm building toward prop making and prop design for film and theatre. My work covers brass and metalwork, foam, painting, and chainmaille. I'm looking for ways in: assistant roles, volunteer work, anything where I can learn on a real production.</p>
       <div class="about-contact">
         <div>
           <span class="label">Email</span>
@@ -642,7 +714,7 @@ body::before {
         </div>
         <div>
           <span class="label">Instagram</span>
-          <a href="https://www.instagram.com/milhstudios" target="_blank" rel="noopener">@milhstudios</a>
+          <a href="https://www.instagram.com/millhstudios" target="_blank" rel="noopener">@millhstudios</a>
         </div>
         <div>
           <span class="label">Based</span>
@@ -657,15 +729,15 @@ body::before {
   <div class="section-head reveal">
     <p class="eyebrow">Section One · Prop Making</p>
     <h2>Builds</h2>
-    <p class="lead">These are my first prop builds — made independently as I develop my fabrication skills. Each project pushes a specific skill set: metalwork and forming, foam sculpting, and replica work from reference.</p>
+    <p class="lead">These are my first builds, made on my own as I figure out the craft. Each one was a chance to focus on something specific: shaping metal, sculpting foam, replicating a piece from reference.</p>
   </div>
 
   <article class="project reveal">
     <div class="project-text">
       <span class="num">01 / Brass Butterfly</span>
       <h3>Brass Butterfly</h3>
-      <p>Inspired by Jinx's butterfly from Arcane. Hand-formed from brass sheet, exploring metal fabrication and surface finishing. Working from visual reference, I focused on accurate proportions and a finish that reads screen-authentic.</p>
-      <p class="tags">Metalwork · Brass · Screen Replica</p>
+      <p>Inspired by Jinx's butterfly from Arcane. Hand-formed from brass sheet, working from screen references to get the proportions and finish right. Still a work in progress.</p>
+      <p class="tags">Metalwork · Brass · Screen Replica · Work in Progress</p>
     </div>
     <div class="project-media layout-grid4" data-gallery="butterfly">
       <img width="1200" height="1600" src="images/props/butterfly/IMG_0378.jpg" alt="Brass butterfly — paper templates and brass body parts" loading="lazy">
@@ -679,7 +751,7 @@ body::before {
     <div class="project-text">
       <span class="num">02 / Sidearm</span>
       <h3>Painted Sci-Fi Sidearm</h3>
-      <p>A painted and weathered sci-fi pistol — exploring finishing techniques used on prop weapons for screen: layered base coats, dry-brushing for edge wear, and silver paint scraping to read as a worn, used object rather than a clean toy.</p>
+      <p>A painted and weathered sci-fi pistol. Layered base coats, dry-brushing on the edges, and silver paint scraped through, so it reads as something actually used rather than a clean toy.</p>
       <p class="tags">Paint Finish · Weathering · Prop Treatment</p>
     </div>
     <div class="project-media layout-duo" data-gallery="pistol">
@@ -692,7 +764,7 @@ body::before {
     <div class="project-text">
       <span class="num">03 / Bar Sign</span>
       <h3>Bar Sign</h3>
-      <p>A hand-crafted bar sign built from MDF and foam, exploring signage fabrication, layering, and finishing techniques used in set dressing and prop making.</p>
+      <p>A hand-built bar sign made from MDF and foam. Practice in signage fabrication, layering, and the kind of finishing work that comes up in set dressing.</p>
       <p class="tags">Foam · MDF · Set Dressing</p>
     </div>
     <div class="project-media">
@@ -706,8 +778,8 @@ body::before {
   <article class="project reverse reveal">
     <div class="project-text">
       <span class="num">04 / Rocky</span>
-      <h3>Rocky — Project Hail Mary</h3>
-      <p>A replica build of Rocky — the alien character from Andy Weir's novel — constructed in foam. Focuses on organic sculpting, armature work, and achieving a believable alien texture and form.</p>
+      <h3>Rocky · Project Hail Mary</h3>
+      <p>A foam build of Rocky, the alien from Andy Weir's Project Hail Mary. Focused on organic sculpting, the armature underneath, and getting the texture to look believable.</p>
       <p class="tags">Foam Fabrication · Sculpting · Replica</p>
     </div>
     <div class="project-media">
@@ -723,25 +795,67 @@ body::before {
   <div class="section-head reveal">
     <p class="eyebrow">Section Two · Painting</p>
     <h2>Painting</h2>
-    <p class="lead">A selection of paintings — the practice that underpins my understanding of colour, texture, and surface. Oils, acrylics, and mixed media.</p>
+    <p class="lead">Paintings from the last few years. Where most of my colour, texture, and surface work comes from. Oils, acrylics, mixed media, and spray paint.</p>
   </div>
-  <div class="masonry reveal" data-gallery="painting">
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_3315.jpg" alt="Portrait painting in studio" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1386.jpg" alt="Cubist still life study" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_3083.jpg" alt="Atmospheric dark painting" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_5386.jpg" alt="Toyota Carina 1974 painted illustration" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1141.jpg" alt="Figure painting on easel" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_6097.jpg" alt="Galaxy painting with planets" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_2256.jpg" alt="Figure study in blue" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1381.jpg" alt="Still life setup in natural light" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0943.jpg" alt="Monstera leaf print study in orange" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1376.jpg" alt="Colour wheel studies" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7917.jpg" alt="Alligator danger sign — painted poster" loading="lazy"></div>
-    <div class="mitem"><img width="1600" height="1200" src="images/painting/IMG_0892.jpg" alt="Monstera leaf print study in teal" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_8071.jpg" alt="Alligator danger sign — finished view" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0888.jpg" alt="Monstera leaf print studies" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7897.jpg" alt="Alligator sign under UV light" loading="lazy"></div>
-    <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1137.jpg" alt="Painting studio with easels" loading="lazy"></div>
+
+  <div class="painting-group reveal">
+    <div class="group-head">
+      <p class="group-meta">Sep to Dec 2025</p>
+      <h3>Edinburgh University Art Course</h3>
+      <p>A short course at Edinburgh University across autumn 2025. Mostly still life and mixed media, with a lot of time spent honing painting technique.</p>
+    </div>
+    <div class="group-grid" data-gallery="painting-edinburgh">
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0888.jpg" alt="Monstera leaf print studies" loading="lazy"></div>
+      <div class="mitem"><img width="1600" height="1200" src="images/painting/IMG_0892.jpg" alt="Monstera leaf print study in teal" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1137.jpg" alt="Painting studio with easels" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1141.jpg" alt="Figure painting on easel" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1376.jpg" alt="Colour wheel studies" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1381.jpg" alt="Still life setup in natural light" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_1386.jpg" alt="Cubist still life study" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="painting-group reveal">
+    <div class="group-head">
+      <h3>Alligator Sign · UV Paint</h3>
+      <p>An alligator danger sign painted with UV-reactive paint so the whole thing lights up under blacklight.</p>
+    </div>
+    <div class="group-grid" data-gallery="painting-alligator">
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7917.jpg" alt="Alligator danger sign painted poster" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_8071.jpg" alt="Alligator danger sign finished view" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_7897.jpg" alt="Alligator sign glowing under UV light" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="painting-group reveal">
+    <div class="group-head">
+      <h3>Spray Paint Art</h3>
+      <p>Planets and a galaxy worked up in layers of spray paint and masking, leaning on the textures the medium gives you.</p>
+    </div>
+    <div class="group-grid" data-gallery="painting-spray">
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_6097.jpg" alt="Spray paint galaxy with planets" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="painting-group reveal">
+    <div class="group-head">
+      <h3>Toyota Carina · Acrylic</h3>
+      <p>A 1974 Toyota Carina painted in acrylic.</p>
+    </div>
+    <div class="group-grid" data-gallery="painting-car">
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_5386.jpg" alt="1974 Toyota Carina in acrylic" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="painting-group reveal">
+    <div class="group-head">
+      <h3>Other Works</h3>
+    </div>
+    <div class="group-grid" data-gallery="painting-other">
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_3083.jpg" alt="Atmospheric dark painting" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_2256.jpg" alt="Figure study in blue" loading="lazy"></div>
+      <div class="mitem"><img width="1200" height="1600" src="images/painting/IMG_0943.jpg" alt="Monstera leaf print study in orange" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
@@ -749,7 +863,7 @@ body::before {
   <div class="section-head reveal">
     <p class="eyebrow">Section Three · Chainmaille &amp; Jewellery</p>
     <h2>Chainmaille</h2>
-    <p class="lead">Hand-woven chainmaille and metalwork jewellery. Each piece is made using traditional ring-weaving techniques — patient, precise, and material-led.</p>
+    <p class="lead">Hand-woven chainmaille and a bit of metalwork jewellery. Slow, repetitive work, all built up ring by ring using traditional weaving techniques.</p>
   </div>
   <div class="masonry reveal" data-gallery="chainmail">
     <div class="mitem"><img width="1600" height="1200" src="images/chainmaille/IMG_9371.jpg" alt="Chainmaille bralette" loading="lazy"></div>
@@ -772,7 +886,7 @@ body::before {
     <div class="footer-right">
       <div class="links">
         <a href="mailto:milliekharrison@gmail.com">milliekharrison@gmail.com</a>
-        <a href="https://www.instagram.com/milhstudios" target="_blank" rel="noopener">@milhstudios</a>
+        <a href="https://www.instagram.com/millhstudios" target="_blank" rel="noopener">@millhstudios</a>
       </div>
       <p><em>Open to prop making assistant roles, volunteer set work, and collaborative projects.</em></p>
     </div>
